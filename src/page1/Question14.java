@@ -14,35 +14,33 @@ public class Question14 {
 
 
     public static void main(String[] args) {
-        String[] strs = {"flower","flow","flight"};
+        String[] strs = {"flower", "flow", "flight"};
         System.out.println(longestCommonPrefix(strs));
 
-        String[] strs1 = {"cir","car"};
+        String[] strs1 = {"cir", "car"};
         System.out.println(longestCommonPrefix(strs1));
     }
 
     public static String longestCommonPrefix(String[] strs) {
-        if(strs.length==0){
+        if (strs.length == 0) {
             return "";
         }
-        if(strs.length == 1){
+        if (strs.length == 1) {
             return strs[0];
         }
         StringBuilder sb = new StringBuilder();
-        sb.append("");
-
 
         int prefix = 0;
-        while (true){
-            if(strs[0].length() == prefix){
+        while (true) {
+            if (strs[0].length() == prefix) {
                 return sb.toString();
             }
 
-            for (int i = 1;i<strs.length;i++){
-                if(strs[i].length()==prefix){
+            for (int i = 1; i < strs.length; i++) {
+                if (strs[i].length() == prefix) {
                     return sb.toString();
-                }else{
-                    if(strs[i].charAt(prefix)!=strs[0].charAt(prefix)){
+                } else {
+                    if (strs[i].charAt(prefix) != strs[0].charAt(prefix)) {
                         return sb.toString();
                     }
                 }
